@@ -82,7 +82,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active " href="<?= BASEURL; ?>Profile">
+          <a class="nav-link " href="<?= BASEURL; ?>Profile">
             <i class="ni ni-single-02 text-yellow"></i> Profil Pengguna
           </a>
         </li>
