@@ -44,37 +44,27 @@
   .thread:after {
     content: "";
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: red;
+    background: #172b4d;
     border: 2px solid white;
     top: -4.5px;
     left: -3.5px;
   }
   
-  .knob {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: -18px;
-    left: -4.5px;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 50%;
-    border-bottom: 2px solid transparent;
-  }
-  
   .pendulum {
-     width: 160px;
-     background: -webkit-linear-gradient(to right, #5e72e4 , #172b4d);
-     background: -webkit-linear-gradient(left, #5e72e4 , #172b4d);
-     background: linear-gradient(to right, #5e72e4 , #172b4d );
-      border-radius: 10%;
+     width: 130px;
+     height: 130px;
+     background: -webkit-linear-gradient(to right, #fb6340 , #5e72e4);
+     background: -webkit-linear-gradient(left, #fb6340 , #5e72e4);
+     background: linear-gradient(to right, #fb6340 , #5e72e4 );
+      border-radius: 100%;
       position: absolute;
       bottom: -37px;
-      left: -77px;
+      left: -60px;
       font-size: 20px;
-      padding: 10px 20px;
+      padding: 30px 20px;
   }
   
   .shadow_a {

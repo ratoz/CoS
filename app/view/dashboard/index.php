@@ -3,7 +3,6 @@
 <div class="base">
   <div class="holder"></div>
   <div class="thread">
-    <div class="knob"></div>
     <div class="pendulum" style="color: white">Circle Of Science</div>
   </div>
   <div class="shadow_a"></div>
