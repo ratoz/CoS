@@ -1,5 +1,14 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
+<div class="base">
+  <div class="holder"></div>
+  <div class="thread">
+    <div class="knob"></div>
+    <div class="pendulum" style="color: white">Circle Of Science</div>
+  </div>
+  <div class="shadow"></div>
+</div>
+
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
@@ -29,7 +38,7 @@
       </div>
     </div>
     <br>
-    <div class="container">
+    <div>
       <TABLE class="table table-striped table-resposive table-hover table-dark shadow-lg" id="tableCari">
       </TABLE>
     </div>
