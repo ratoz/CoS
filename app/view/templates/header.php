@@ -26,7 +26,7 @@
 
 
   <?php error_reporting(0);
-  if ($data['page'] === "dashboard" || "rank"){ ?>
+  if ($data['page'] ===  ('dashboard'||'rank')){ ?>
   <style>
             input[type=text] {
                 border: 2px solid #bdbdbd;

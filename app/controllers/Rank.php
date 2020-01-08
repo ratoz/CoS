@@ -5,7 +5,8 @@ class Rank extends Controller
 	public function index()
 	{
 		$data['list'] = $this->model('RankModel')->showRank();
-
+		$data['profil'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
+		$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
 		$data['title'] = "Rank";
 		$data['page'] = "rank";
 		$i = 0;
@@ -53,9 +54,10 @@ class Rank extends Controller
 				$data['list'][$i]['profilfoto'] = ("../" . PATHFOTO . $value['foto']);
 				$i++;
 			}
+			$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
 			$data['title'] = "Rank";
 			$data['page'] = "rank";
-			$data['pagesec'] = "searchrank"; 
+			$data['path']="../".PATHFOTO;
 
 			$this->view('templates/header', $data);
 			$this->view('templates/navbar', $data); //memanggil file header pada folder templates

@@ -11,7 +11,8 @@ class Profile extends Controller
         $data['page']='profile';
         $data['edit']=true;
         $model = $this->model('DataModel');
-        $data['profil'] = $model->selectDatawithID($_SESSION['id']); //diganti dengan session
+        $data['profil'] = $model->selectDatawithID($_SESSION['id']);
+        $data['foto'] = $model->selectDatawithID($_SESSION['id']); //diganti dengan session
         $data['profil']['age'] = $model->getAge($data['profil']['tgl_lahir']);
         $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
         $data['profil']['prov'] = $model->selectAllDataAddress('prov');
@@ -34,8 +35,10 @@ class Profile extends Controller
         $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
         $data['profil']['prov'] = $model->selectAllDataAddress('prov');
         $data['profil']['temp']=$url[2];
-        $data['page']='profile';
-        $data['pagesec'] = "touser";
+        $data['page']='touser';
+        $data['path']="../../".PATHFOTO;
+
+        $data['foto'] = $model->selectDatawithID($_SESSION['id']);
         $data['edit']=false;
         $this->view('templates/header',$data); //memanggil file header pada folder templates
         $this->view('templates/navbar',$data);
@@ -105,7 +108,26 @@ class Profile extends Controller
         $id = substr($_POST['kabupaten'], 1);
         $data['kabupaten'] = 'KB' . sprintf('%03d', $id);
         $data['id']=$_SESSION['id']; //diganti dengan session
+        if (!empty($_FILES['raport'])){
+            $check=$model->selectDatawithID($_SESSION['id']);
+            $idberkas = $check['id_berkas'];
+            $data['raport']=$model->ubahDataRaport($_FILES['raport'],$idberkas);
+            if ($data['raport']==false){
+                header("Location: ".BASEURL."Profile");
+                Alert::setMsg('Raport tidak boleh berekstensi selain PDF ataupun lebih dari 8MB','Gagal','danger');
+            }
+            else{
+                $model->ubahDataPengguna($data);
+                header("Location: ".BASEURL."Profile");
+                Alert::setMsg('Data berhasil diubah! Mohon menunggu konfirmasi admin selama 1-3 hari kerja.','Berhasil','info');
+            }
+        }
+        else{
         $model->ubahDataPengguna($data);
         header("Location: ".BASEURL."Profile");
+        Alert::setMsg('Data berhasil diubah!','Berhasil','info');
+        }
+
+
     }
 }

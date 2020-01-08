@@ -9,7 +9,7 @@
   <script src="<?= PATHJS; ?>jquery-ui.min.js"></script>
 
   <?php error_reporting(0)?>
-  <?php if ($data['page']=='profile'){?>
+  <?php if ($data['page']==('profile'||'touser')&&!'login'){?>
    <script src="<?=PATHJS;?>editprofile.js"></script>
   <?php } ?>
   <?php error_reporting(0)?>

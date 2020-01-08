@@ -11,7 +11,7 @@ class Dashboard extends Controller
 		$data['page'] = 'dashboard';
 		$data['inittable']='';
 		$result = $this->model('DataModel')->selectAllData();
-		$data['profil'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
+		$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
 		foreach($result as $value){
 			$data['inittable'].= "
 				<tr>
