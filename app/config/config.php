@@ -9,4 +9,4 @@ define('PATHCSS', "http://localhost/cos_mvc/public/css/");
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'serah');
+define('DB_NAME', 'db_cos');
