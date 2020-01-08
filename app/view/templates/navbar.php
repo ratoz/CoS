@@ -95,7 +95,11 @@
           </a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
+          <a class="nav-link " href="<?= BASEURL; ?>Profile">
+=======
           <a class="nav-link <?php if ($data['page'] === 'profile') echo "active"; ?>" href="<?= BASEURL; ?>Profile">
+>>>>>>> 2c1659b1c2dd8fbe8e8521cea835974a735d1978
             <i class="ni ni-single-02 text-yellow"></i> Profil Pengguna
           </a>
         </li>
