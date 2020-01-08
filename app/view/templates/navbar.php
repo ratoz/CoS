@@ -72,22 +72,23 @@
       </div>
       <!-- Navigation -->
       <ul class="navbar-nav">
-        <li class="nav-item  class=" active>
-          <a class=" nav-link " href="<?= BASEURL; ?>Dashboard"> <i class="ni ni-tv-2 text-primary"></i> Beranda
+        <li class="nav-item <?php if ($data['page'] === 'dashboard') echo "active"; ?>">
+          <a class=" nav-link " href="<?= BASEURL; ?>Dashboard">
+          <i class="ni ni-tv-2 text-primary"></i> Beranda
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="<?= BASEURL; ?>CariPartner">
+          <a class="nav-link <?php if ($data['page'] === 'caripartner') echo "active"; ?>" href="<?= BASEURL; ?>CariPartner">
             <i class="ni ni-planet text-blue"></i> Cari Partner
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active " href="<?= BASEURL; ?>Profile">
+          <a class="nav-link <?php if ($data['page'] === 'profile') echo "active"; ?>" href="<?= BASEURL; ?>Profile">
             <i class="ni ni-single-02 text-yellow"></i> Profil Pengguna
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="<?= BASEURL; ?>Rank">
+          <a class="nav-link <?php if ($data['page'] === 'rank') echo "active"; ?>" href="<?= BASEURL; ?>Rank">
             <i class="ni ni-bullet-list-67 text-red"></i> Rank
           </a>
         </li>

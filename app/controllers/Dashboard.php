@@ -4,6 +4,10 @@ class Dashboard extends Controller
 {
 	public function index()
 	{
+		if ($_SESSION['id']=='' || $_SESSION['id'] == null){
+            header('Location: '.BASEURL.'login');
+        }
+        else{
 		$data['page'] = 'dashboard';
 		$data['inittable']='';
 		$result = $this->model('DataModel')->selectAllData();
@@ -23,6 +27,7 @@ class Dashboard extends Controller
 					</form>
 					</td>
 				</tr>";
+		}
 		}
 
 		$this->view('templates/header',$data); //memanggil file header pada folder templates
