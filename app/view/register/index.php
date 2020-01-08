@@ -98,7 +98,7 @@
           <div class="card-header bg-transparent pb-5">
             <div class="text-muted text-center mt-2 mb-4"><small>Masukan Data Diri Anda</small></div>
             <?php Alert::ShowMessage() ?>
-            <form method="POST" action="<?=BASEURL?>Register/createuser">
+            <form method="POST" action="<?= BASEURL ?>Register/createuser">
               <div style="width: 350px;" class="form-group">
                 <input type="email" class="form-control" id="email" placeholder="Masukan Email" name="email">
               </div>

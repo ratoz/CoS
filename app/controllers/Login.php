@@ -5,7 +5,7 @@ class Login extends Controller
 	public function index()
 	{
 		$data['title'] = 'Login';
-		$data['page']='login';
+		$data['page'] = 'login';
 		if (!empty($_SESSION['rememberMe'])) {
 			$data['email'] = $_SESSION['email'];
 			$data['rememberMe'] = $_SESSION['rememberMe'];
@@ -72,6 +72,18 @@ class Login extends Controller
 				header('Location: ' . BASEURL . 'login/admin');
 				exit;
 			}
+		}
+	}
+
+	public function forgetPassword()
+	{
+		$data = $this->model('LoginModel')->sendEmailFP($_POST);
+
+		if ($data) {
+			header("Location: " . BASEURL . "help/forget_password");
+		} else {
+			Alert::setMsg('Email tidak', 'terdaftar', 'danger');
+			header("Location: " . BASEURL . "login");
 		}
 	}
 }

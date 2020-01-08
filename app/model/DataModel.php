@@ -260,7 +260,6 @@ class DataModel
 			$this->condb->bind("reason", "No Reason");
 			$this->condb->execute();
 		}
-
 	}
 
 	public function ubahDataRaport($dataraport, $id)
@@ -276,11 +275,11 @@ class DataModel
 		$extensions = array("pdf");
 
 		if (in_array($file_ext, $extensions) === false) {
-			$errors[] = "extension not allowed, please choose a JPEG or PNG file.";
+			$errors[] = "Mohon upload file berekstensi JPEG atau PNG saja";
 		}
 
 		if ($file_size > 8388608) {
-			$errors[] = 'File size must be excately 8 MB';
+			$errors[] = 'Ukuran file harus dibawah 8MB';
 		}
 		if (empty($errors) == true) {
 
@@ -305,5 +304,29 @@ class DataModel
 		}
 	}
 
+	public function ticket($data, $code)
+	{
+		$id = $this->getidCount();
+		$id++;
 
+		$query = "INSERT INTO help_ticket 
+    VALUES (:id, 'Forget Password', :email, 'Forget Password', 'Forget Password', :code, 'Unread');";
+
+		$this->db->query($query);
+		$this->db->bind("id", $id);
+		$this->db->bind("email", $data['email_forget']);
+		$this->db->bind("code", $code);
+
+		$this->db->execute();
+	}
+
+	public function getidCount()
+	{
+		$query = "SELECT * FROM help_ticket";
+
+		$this->db->query($query);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
 }

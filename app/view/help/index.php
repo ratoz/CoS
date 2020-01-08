@@ -54,7 +54,7 @@
     </div>
     <!-- Page content -->
     <div class="container w-50 bg-white border rounded">
-    <?php Alert::showMessage(); ?>
+      <?php Alert::showMessage(); ?>
       <div class="container mt-4 text-center">
         <h1>Bantuan</h1>
         <p>Mohon isi form ticket berikut</p>

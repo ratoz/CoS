@@ -3,14 +3,14 @@
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
-    <div class="container row justify-content-center pb-4 hoverable">
-    <h1 class="ml14 mb-3">
-      <span class="text-wrapper">
-        <h3 class="letter shadow-lg p-2 bg-white rounded">Temukan Teman Belajar Terdekat Anda</h3>
-        <span class="line"></span>
-      </span>
-    </h1>
-  </div>
+      <div class="container row justify-content-center pb-4 hoverable">
+        <h1 class="ml14 mb-3">
+          <span class="text-wrapper">
+            <h3 class="letter shadow-lg p-2 bg-white rounded">Temukan Teman Belajar Terdekat Anda</h3>
+            <span class="line"></span>
+          </span>
+        </h1>
+      </div>
 
       <div class="container">
         <form action="" method="post">
@@ -37,14 +37,14 @@
     <br>
     <br>
     <div class="bg-default pt-3 pb-3 rounded">
-    <div class="container row justify-content-center pb-4 hoverable">
-    <h1 class="ml14 mb-3">
-      <span class="text-wrapper">
-        <h3 class="letter shadow-lg p-2 bg-white rounded">Beberapa Siswa Siswi Yang Telah Terdaftar</h3>
-        <span class="line"></span>
-      </span>
-    </h1>
-  </div>
+      <div class="container row justify-content-center pb-4 hoverable">
+        <h1 class="ml14 mb-3">
+          <span class="text-wrapper">
+            <h3 class="letter shadow-lg p-2 bg-white rounded">Beberapa Siswa Siswi Yang Telah Terdaftar</h3>
+            <span class="line"></span>
+          </span>
+        </h1>
+      </div>
       <div class="table-responsive">
         <Table class="table align-items-center table-light table-flush" id='partnerTable'>
           <tr>
@@ -75,60 +75,60 @@
 
         <div class="container bg-default p-3 rounded">
 
-        <div class="container row justify-content-center pb-4 hoverable">
-    <h1 class="ml14 mb-3">
-      <span class="text-wrapper">
-        <h3 class="letter shadow-lg p-2 bg-white rounded">Tentang Pengembang Website</h3>
-        <span class="line"></span>
-      </span>
-    </h1>
-  </div>
+          <div class="container row justify-content-center pb-4 hoverable">
+            <h1 class="ml14 mb-3">
+              <span class="text-wrapper">
+                <h3 class="letter shadow-lg p-2 bg-white rounded">Tentang Pengembang Website</h3>
+                <span class="line"></span>
+              </span>
+            </h1>
+          </div>
 
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="akb1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Akbar Hari Mukti</h5>
-        <p class="card-text">Universitas Amikom Yogyakarta</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="url(); public/img/profile/akb1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Herlandro Tribiakto</h5>
-        <p class="card-text">Universitas Amikom Yogyakarta</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Muttafiah</h5>
-        <p class="card-text">Universitas Amikom Yogyakarta</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Rhaka Novyansyah Dewanto</h5>
-        <p class="card-text">Universitas Amikom Yogyakarta</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Ahmad Nashrudin</h5>
-        <p class="card-text">Universitas Amikom Yogyakarta</p>
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img-top" src="akb1.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Akbar Hari Mukti</h5>
+                <p class="card-text">Universitas Amikom Yogyakarta</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="url(); public/img/profile/akb1.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Herlandro Tribiakto</h5>
+                <p class="card-text">Universitas Amikom Yogyakarta</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Muttafiah</h5>
+                <p class="card-text">Universitas Amikom Yogyakarta</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Rhaka Novyansyah Dewanto</h5>
+                <p class="card-text">Universitas Amikom Yogyakarta</p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Ahmad Nashrudin</h5>
+                <p class="card-text">Universitas Amikom Yogyakarta</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="container-fluid">
-  <div class="row justify-content-center mt-5">
+        <div class="container-fluid">
+          <div class="row justify-content-center mt-5">
             <a href="#" class="btn btn-primary rounded py-2 px-4 text-white">Tentang Website</a>
           </div>
-  </div>
-  
+        </div>
+
       </div>
     </div>
 
@@ -138,4 +138,3 @@
 <!-- Footer -->
 </div>
 </div>
-

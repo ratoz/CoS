@@ -36,4 +36,75 @@ class LoginModel extends Controller
       return $this->db->single();
     }
   }
+
+  public function sendEmailFP($data)
+  {
+    if ($this->validEmail($data)) {
+      $code = $this->codeGenerator();
+      $query = "INSERT INTO forget_password(verify_code,email) VALUES (:code,:email)";
+
+      $this->db->query($query);
+      $this->db->bind("code", $code);
+      $this->db->bind("email", $data['email_forget']);
+
+      $this->db->execute();
+
+      $this->ticket($data, $code);
+
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function codeGenerator()
+  {
+    do {
+      $code = rand();
+    } while (strlen($code) < 10);
+    return $code;
+  }
+
+  public function validEmail($data)
+  {
+    $query = "SELECT email FROM data_pengguna
+    WHERE email = :email";
+
+    $this->db->query($query);
+    $this->db->bind("email", $data['email_forget']);
+
+    $this->db->execute();
+
+    if ($this->db->rowCount() == 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function ticket($data, $code)
+  {
+    $id = $this->getidCount();
+    $id++;
+
+    $query = "INSERT INTO help_ticket 
+    VALUES (:id, 'Forget Password', :email, 'Forget Password', 'Forget Password', :code, 'Unread');";
+
+    $this->db->query($query);
+    $this->db->bind("id", $id);
+    $this->db->bind("email", $data['email_forget']);
+    $this->db->bind("code", $code);
+
+    $this->db->execute();
+  }
+
+  public function getidCount()
+  {
+    $query = "SELECT * FROM help_ticket";
+
+    $this->db->query($query);
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
 }

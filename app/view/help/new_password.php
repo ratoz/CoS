@@ -68,7 +68,7 @@
                     <p>Masukkan Password Baru anda</p>
                 </div>
             </div>
-            <?php Alert::showMessage();?>
+            <?php Alert::showMessage(); ?>
             <form action="<?= BASEURL; ?>help/newPassword" method="POST" class="form-group">
                 <div class="container">
                     <div class="row mt-2">
