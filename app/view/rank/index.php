@@ -5,14 +5,12 @@
 	<div class="container-fluid">
 
 		<div class="container-fluid text-center d-flex justify-content-center">
-			<div class="badge badge-primary text-wrap mb-4" style="background-color: white">
-				<h3>Top Rank User</h3>
-			</div>
+				<h3 class="letter shadow-lg p-2 bg-white rounded mb-3">Top Rank User</h3>
 		</div>
 
 		<div class="container-fluid">
 
-			<div class="form-search-wrap">
+			<div class="form-search-wrap bg-default rounded p-3">
 				<!-- data-aos="fade-up" data-aos-delay="100" -->
 
 				<form class="form-inline form-group" action="<?= BASEURL ?>Rank/searchData" method="post">

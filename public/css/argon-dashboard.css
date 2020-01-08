@@ -248,6 +248,7 @@ svg {
 
 table {
   border-collapse: collapse;
+  border-radius: 7px;
 }
 
 caption {

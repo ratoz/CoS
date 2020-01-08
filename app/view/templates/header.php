@@ -25,33 +25,19 @@
   <!--   Core   -->
 
 
-  <?php error_reporting(0);
-  if ($data['page'] ===  ('dashboard'||'rank')){ ?>
-  <style>
-            input[type=text] {
-                border: 2px solid #bdbdbd;
-                font-family: 'Roboto', Arial, Sans-serif;
-              font-size: 15px;
-              font-weight: 400;
-                padding: .5em .75em;
-                width: 300px;
-            }
-            input[type=text]:focus {
-                border: 2px solid #757575;
-              outline: none;
-            }
 
-            .ui-menu {
+  <style>
+            #ui-id-1 {
                 background-color: white;
             }
-            .ui-menu li  {
+            #ui-id-1 li  {
                 border: black 1px solid;
             }
 
 
         </style>
 
-        <?php } ?>
+
 
 </head>
 
