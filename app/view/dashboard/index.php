@@ -38,7 +38,7 @@
     <br>
     <div class="container">
       <div class="table-responsive">
-        <Table class='table table-dark' id='partnerTable'>
+        <Table class="table align-items-center table-dark table-flush" id='partnerTable'>
           <tr>
             <th>Nama</th>
             <th>Sekolah</th>
