@@ -1,9 +1,9 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
   <div class="container row justify-content-center pb-4">
-    <h1 class="ml14 mb-0">
+    <h1 class="ml14 mb-3">
       <span class="text-wrapper">
-        <span class="letters">Temukan Teman Belajar Terdekat Anda</span>
+        <h3 class="letter shadow-lg p-2 bg-white rounded">Temukan Teman Belajar Terdekat Anda</h3>
         <span class="line"></span>
       </span>
     </h1>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <br>
-    <div class="container-fluid">
+    <div class="container">
       <TABLE class="table table-striped table-resposive table-hover table-dark" id="tableCari">
       </TABLE>
     </div>
