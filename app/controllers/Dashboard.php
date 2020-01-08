@@ -4,15 +4,16 @@ class Dashboard extends Controller
 {
 	public function index()
 	{
-		if ($_SESSION['id'] == '' || $_SESSION['id'] == null) {
-			header('Location: ' . BASEURL . 'login');
-		} else {
-			$data['page'] = 'dashboard';
-			$data['inittable'] = '';
-			$result = $this->model('DataModel')->selectAllData();
-			$data['profil'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
-			foreach ($result as $value) {
-				$data['inittable'] .= "
+		if ($_SESSION['id']=='' || $_SESSION['id'] == null){
+            header('Location: '.BASEURL.'login');
+        }
+        else{
+		$data['page'] = 'dashboard';
+		$data['inittable']='';
+		$result = $this->model('DataModel')->selectAllData();
+		$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
+		foreach($result as $value){
+			$data['inittable'].= "
 				<tr>
 					<td> " . $value['name'] . " </td>
 					<td> " . $value['sekolah'] . " </td>

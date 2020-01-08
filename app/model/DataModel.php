@@ -260,5 +260,50 @@ class DataModel
 			$this->condb->bind("reason", "No Reason");
 			$this->condb->execute();
 		}
+
 	}
+
+	public function ubahDataRaport($dataraport, $id)
+	{
+		$errors = array();
+		$file_name = $dataraport['name'];
+		$file_size = $dataraport['size'];
+		$file_tmp = $dataraport['tmp_name'];
+		$file_type = $dataraport['type'];
+		$file_ext = explode('.', $file_name);
+		$file_ext = strtolower(end($file_ext));
+
+		$extensions = array("pdf");
+
+		if (in_array($file_ext, $extensions) === false) {
+			$errors[] = "extension not allowed, please choose a JPEG or PNG file.";
+		}
+
+		if ($file_size > 8388608) {
+			$errors[] = 'File size must be excately 8 MB';
+		}
+		if (empty($errors) == true) {
+
+			$file_name = "raport" . $id . "." . $file_ext;
+			move_uploaded_file($file_tmp, PATHFOTO . $file_name);
+
+			$query = "UPDATE berkas SET
+			raport = :pathraport
+			WHERE id_berkas =  :id  ";
+
+			$this->condb->query($query);
+			$this->condb->bind('pathraport', $file_name);
+			$this->condb->bind('id', $id);
+
+			$this->condb->execute();
+
+			return $this->condb->rowCount();
+			//echo "Success";
+
+		} else {
+			return false;
+		}
+	}
+
+
 }

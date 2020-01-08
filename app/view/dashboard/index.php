@@ -1,13 +1,5 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
-<div class="base">
-  <div class="holder"></div>
-  <div class="thread">
-    <div class="pendulum" style="color: white">Circle Of Science</div>
-  </div>
-  <div class="shadow_a"></div>
-</div>
-
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
@@ -23,13 +15,13 @@
       <div class="container">
         <form action="" method="post">
           <div class="row align-items-center">
-            <div class="col-lg-12s mb-4 mb-xl-0 col-xl-3">
+            <div class="col-lg-12s mb-4 mb-xl-0 col-xl-4">
               <div class="wrap-icon">
-                <input class="hoverable" type="text" id="name" name="name" placeholder="Nama Kabupaten" value="">
+                <input class="form-control" type="text" id="name" name="name" placeholder="Nama Kabupaten" value="">
                 <span class="icon icon-room"></span>
               </div>
             </div>
-            <div class="col-lg-12 col-xl-2" style="margin-left: 100px">
+            <div class="col-lg-12 col-xl-2">
               <input type="button" class="btn btn-primary btn-block rounded hoverable" id="search" name="search" value="Search">
             </div>
           </div>

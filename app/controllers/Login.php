@@ -5,7 +5,7 @@ class Login extends Controller
 	public function index()
 	{
 		$data['title'] = 'Login';
-
+		$data['page']='login';
 		if (!empty($_SESSION['rememberMe'])) {
 			$data['email'] = $_SESSION['email'];
 			$data['rememberMe'] = $_SESSION['rememberMe'];

@@ -10,36 +10,25 @@
         Circle Of Science
       </center>
     </h2>
+
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
-
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-              <?php
-              echo "test";
-              if(!empty($data['pagesec'])){
-                if ($data['pagesec']==='touser'){
-                $foto = "../../".PATHFOTO;}
-                else{
-                $foto = "../".PATHFOTO;}
-
-              }
-              else{
-              $foto = PATHFOTO;}
-
-                ?>
-              <?php if (!file_exists($foto . $data['profil']['profilfoto'])) {
+            <?php if (empty($data['path'])){$data['path']=PATHFOTO;}
+              if (!file_exists($data['path'].$data['foto']['profilfoto'])) {
                 if ($data['profil']['gender'] === "Laki-Laki") { ?>
-                  <img id="changeimg" src="<?= $foto . "man.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $data['path'] . "man.svg" ?>" class="rounded-circle">
                 <?php } else { ?>
-                  <img id="changeimg" src="<?= $foto . "girl.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $data['path']  . "girl.svg" ?>" class="rounded-circle">
                 <?php } ?>
 
               <?php } else { ?>
-                <img id="changeimg" src="<?= $foto . $data['profil']['profilfoto'] ?>" class="rounded-circle">
+                <img id="changeimg" src="<?= $data['path'].$data['foto']['profilfoto'] ?>" class="rounded-circle">
               <?php } ?>
+
 
             </span>
           </div>
@@ -135,7 +124,35 @@
   <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
     <div class="container-fluid">
       <!-- Brand -->
-      <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="#">Circle Of Science</a>
+      <span class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" >
+        <?php switch ($data['page']) {
+          case 'dashboard':
+            $output = "Beranda";
+            break;
+
+          case 'rank':
+            $output = "Peringkat";
+            break;
+
+            case 'profile':
+              $output ="Profil Saya";
+              break;
+
+              case 'caripartner':
+                $output ="Cari Partner";
+                break;
+          
+          default:
+          $output = "Null";
+            break;}
+
+            if ($data['page']==='touser'){
+              $output = "Profil User";
+            }
+
+            echo $output;
+        ?>
+      </span>
       <!-- User -->
       <ul class="navbar-nav align-items-center d-none d-md-flex">
         <li class="nav-item dropdown">
@@ -143,16 +160,16 @@
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
 
-              <?php
-              if (!file_exists(PATHFOTO . $data['profil']['profilfoto'])) {
+              <?php if (empty($data['path'])){$data['path']=PATHFOTO;}
+              if (!file_exists(PATHFOTO.$data['foto']['profilfoto'])) {
                 if ($data['profil']['gender'] === "Laki-Laki") { ?>
-                  <img id="changeimg" src="<?= PATHFOTO . "man.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $data['path'] . "man.svg" ?>" class="rounded-circle">
                 <?php } else { ?>
-                  <img id="changeimg" src="<?= PATHFOTO . "girl.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $data['path']  . "girl.svg" ?>" class="rounded-circle">
                 <?php } ?>
 
               <?php } else { ?>
-                <img id="changeimg" src="<?= PATHFOTO . $data['profil']['profilfoto'] ?>" class="rounded-circle">
+                <img id="changeimg" src="<?= $data['path']  . $data['foto']['profilfoto'] ?>" class="rounded-circle">
               <?php } ?>
 
               </span>
