@@ -23,6 +23,7 @@ class Profile extends Controller
     }
 
     public function toUser(){
+
         if ($_SESSION['id']=='' || $_SESSION['id'] == null){
             header('Location: '.BASEURL.'logout');
         }
@@ -33,6 +34,8 @@ class Profile extends Controller
         $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
         $data['profil']['prov'] = $model->selectAllDataAddress('prov');
         $data['profil']['temp']=$url[2];
+        $data['page']='profile';
+        $data['pagesec'] = "touser";
         $data['edit']=false;
         $this->view('templates/header',$data); //memanggil file header pada folder templates
         $this->view('templates/navbar',$data);

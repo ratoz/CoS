@@ -18,15 +18,27 @@
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
               <?php
-              if (!file_exists(PATHFOTO . $data['profil']['profilfoto'])) {
+              echo "test";
+              if(!empty($data['pagesec'])){
+                if ($data['pagesec']==='touser'){
+                $foto = "../../".PATHFOTO;}
+                else{
+                $foto = "../".PATHFOTO;}
+
+              }
+              else{
+              $foto = PATHFOTO;}
+            
+                ?>
+              <?php if (!file_exists($foto . $data['profil']['profilfoto'])) {
                 if ($data['profil']['gender'] === "Laki-Laki") { ?>
-                  <img id="changeimg" src="<?= PATHFOTO . "man.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $foto . "man.svg" ?>" class="rounded-circle">
                 <?php } else { ?>
-                  <img id="changeimg" src="<?= PATHFOTO . "girl.svg" ?>" class="rounded-circle">
+                  <img id="changeimg" src="<?= $foto . "girl.svg" ?>" class="rounded-circle">
                 <?php } ?>
 
               <?php } else { ?>
-                <img id="changeimg" src="<?= PATHFOTO . $data['profil']['profilfoto'] ?>" class="rounded-circle">
+                <img id="changeimg" src="<?= $foto . $data['profil']['profilfoto'] ?>" class="rounded-circle">
               <?php } ?>
 
             </span>

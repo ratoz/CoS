@@ -38,7 +38,6 @@ class Rank extends Controller
 
 	public function searchData()
 	{
-		echo $_POST['gender'];
 		$data['search'] = $this->model('RankModel')->showRankByKab($_POST);
 
 		if (!empty($data['search'])) {
@@ -56,6 +55,7 @@ class Rank extends Controller
 			}
 			$data['title'] = "Rank";
 			$data['page'] = "rank";
+			$data['pagesec'] = "searchrank"; 
 
 			$this->view('templates/header', $data);
 			$this->view('templates/navbar', $data); //memanggil file header pada folder templates
