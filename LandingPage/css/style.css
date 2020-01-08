@@ -280,13 +280,13 @@ li {
     width: 150px;
     height: 36px;
     border-left: 2px solid #00bfff;
-    border-right: 2px solid #ffbf00;
+    border-right: 2px solid #006600;
     box-sizing: border-box;
     background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
     background-size: 100% 2px;
-    background-image: -webkit-linear-gradient(left, #00bfff 0%, #ffbf00 100%), -webkit-linear-gradient(left, #00bfff 0%, #ffbf00 100%);
-    background-image: linear-gradient(to right, #00bfff 0%, #ffbf00 100%), linear-gradient(to right, #00bfff 0%, #ffbf00 100%);
+    background-image: -webkit-linear-gradient(left, #00bfff 0%, #006600 100%), -webkit-linear-gradient(left, #00bfff 0%, #006600 100%);
+    background-image: linear-gradient(to right, #00bfff 0%, #006600 100%), linear-gradient(to right, #00bfff 0%, #006600 100%);
     -webkit-transition-duration: 1000ms;
     transition-duration: 1000ms;
     position: relative;
@@ -298,9 +298,9 @@ li {
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     background: #00bfff;
-    background: -webkit-linear-gradient(to right, #00bfff, #ffbf00);
-    background: -webkit-linear-gradient(left, #00bfff, #ffbf00);
-    background: linear-gradient(to right, #00bfff, #ffbf00);
+    background: -webkit-linear-gradient(to right, #00bfff, #006600);
+    background: -webkit-linear-gradient(left, #00bfff, #006600);
+    background: linear-gradient(to right, #00bfff, #006600);
     content: '';
     position: absolute;
     width: 100%;
@@ -597,46 +597,6 @@ li {
     transform: translateY(-50%);
 }
 
-.barfiller {
-    background: #e5e5e5;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    height: 8px;
-    position: relative;
-    width: 100%;
-}
-
-.barfiller .fill {
-    display: block;
-    position: relative;
-    height: 100%;
-    background: #00bfff;
-    background: -webkit-linear-gradient(to right, #00bfff, #ffbf00);
-    background: -webkit-linear-gradient(left, #00bfff, #ffbf00);
-    background: linear-gradient(to right, #00bfff, #ffbf00);
-    z-index: 1;
-}
-
-.barfiller .tipWrap {
-    display: none;
-}
-
-.barfiller .tip {
-    margin-top: -22px;
-    font-size: 14px;
-    color: #232d37;
-    left: 0px;
-    position: absolute;
-    z-index: 2;
-    background: transparent;
-    font-weight: 600;
-}
-
-.barfiller .tip:after {
-    display: none;
-}
-
 .single_progress_bar {
     margin-bottom: 35px;
 }
@@ -856,9 +816,9 @@ li {
     text-transform: uppercase;
     font-weight: 600;
     background: #00bfff;
-    background: -webkit-linear-gradient(to right, #00bfff, #ffbf00);
-    background: -webkit-linear-gradient(left, #00bfff, #ffbf00);
-    background: linear-gradient(to right, #00bfff, #ffbf00);
+    background: -webkit-linear-gradient(to right, #00bfff, #006600);
+    background: -webkit-linear-gradient(left, #00bfff, #006600);
+    background: linear-gradient(to right, #00bfff, #006600);
 }
 
 .footer-social-widegt {
