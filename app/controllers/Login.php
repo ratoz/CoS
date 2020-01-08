@@ -1,7 +1,9 @@
-<?php 
+<?php
 
-class Login extends Controller {
-    public function index() {
+class Login extends Controller
+{
+	public function index()
+	{
 		$data['title'] = 'Login';
 
 		if (!empty($_SESSION['rememberMe'])) {
@@ -12,31 +14,33 @@ class Login extends Controller {
 			$data['rememberMe'] = '';
 		}
 
-		$this->view('templates/header',$data); //memanggil file header pada folder templates
-		$this->view('login/index',$data); //memanggil file index pada folder dashboard
+		$this->view('templates/header', $data); //memanggil file header pada folder templates
+		$this->view('login/index', $data); //memanggil file index pada folder dashboard
 		$this->view('templates/footer'); //memanggil file footer pada folder templates
 	}
-	
-	public function admin() {
+
+	public function admin()
+	{
 		$data['title'] = 'Admin Login';
-		
+
 		$this->view('templates/header', $data); //memanggil file header pada folder templates
 		$this->view('login/admin'); //memanggil file index pada folder dashboard
 		$this->view('templates/footer'); //memanggil file footer pada folder templates
 	}
 
-	public function verify($type) {
+	public function verify($type)
+	{
 		session_start();
 		if ($type == 'user') {
 
 			$data = $this->model('LoginModel')->userCheck($_POST, $type);
 
-			if ($data > 0){
+			if ($data > 0) {
 
 				$_SESSION['id'] = $data['id'];
 				$_SESSION['email'] = $data['email'];
 
-				header('Location: '. BASEURL .'Profile');
+				header('Location: ' . BASEURL . 'Profile');
 				exit;
 			} else {
 				$_SESSION['email'] = $_POST['email'];
@@ -47,26 +51,25 @@ class Login extends Controller {
 					$_SESSION['rememberMe'] = '';
 				}
 
-				Alert::setMsg('Email atau Password','salah','danger');
+				Alert::setMsg('Email atau Password', 'salah', 'danger');
 
-				header('Location: '. BASEURL .'login');
+				header('Location: ' . BASEURL . 'login');
 				exit;
 			}
-
 		} else {
 			$data = $this->model('LoginModel')->userCheck($_POST, $type);
 
-			if ($data > 0){
+			if ($data > 0) {
 				$_SESSION['id_admin'] = $data['id_admin'];
 
-				header('Location: '. BASEURL .'admin/home');
+				header('Location: ' . BASEURL . 'admin/home');
 				exit;
 			} else {
 				$_SESSION['email'] = $_POST['email'];
 
-				Alert::setMsg('Email atau password','salah','danger');
+				Alert::setMsg('Email atau password', 'salah', 'danger');
 
-				header('Location: '. BASEURL .'login/admin');
+				header('Location: ' . BASEURL . 'login/admin');
 				exit;
 			}
 		}

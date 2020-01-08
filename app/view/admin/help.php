@@ -123,7 +123,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="<?=BASEURL;?>help/setRead" method="POST">
+				<form action="<?= BASEURL; ?>help/setRead" method="POST">
 					<input type="hidden" name="id" id="id">
 					<div class="container">
 						<div class="row mb-2">

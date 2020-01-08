@@ -74,16 +74,17 @@ class Help extends Controller
 		}
 	}
 
-	public function setRead() {
-		if(isset($_POST['id'])) {
+	public function setRead()
+	{
+		if (isset($_POST['id'])) {
 			$_POST['status'] = "Read";
 
 			$data = $this->model('HelpModel')->modelSetRead($_POST);
 
-			if($data) {
+			if ($data) {
 				header('Location: ' . BASEURL . 'admin/help');
 			} else {
-				Alert::setMsg("gagal","set baca","danger");
+				Alert::setMsg("gagal", "set baca", "danger");
 				header('Location: ' . BASEURL . 'admin/help');
 			}
 		}

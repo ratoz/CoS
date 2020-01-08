@@ -55,7 +55,7 @@ class Rank extends Controller
 			}
 			$data['title'] = "Rank";
 			$data['page'] = "rank";
-			$data['pagesec'] = "searchrank"; 
+			$data['pagesec'] = "searchrank";
 
 			$this->view('templates/header', $data);
 			$this->view('templates/navbar', $data); //memanggil file header pada folder templates

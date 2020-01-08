@@ -50,7 +50,6 @@ class DataModel
         ON d.id_kabupaten=k.id_kabupaten INNER JOIN provinsi p ON k.id_prov=p.id_prov INNER JOIN berkas b ON d.id_berkas=b.id_berkas
          INNER JOIN peringkat r ON r.id_peringkat=d.id_peringkat');
 		return $this->condb->resultSet();
-
 	}
 
 	public function selectDatawithID($id)
@@ -69,9 +68,9 @@ class DataModel
 	public function selectDatawithKabupaten($id)
 	{
 		$this->condb->query('SELECT * FROM kabupaten where name = :nama');
-		$this->condb->bind('nama',$id);
-		$data=$this->condb->single();
-		$id=$data['id_kabupaten'];
+		$this->condb->bind('nama', $id);
+		$data = $this->condb->single();
+		$id = $data['id_kabupaten'];
 
 		$this->condb->query('SELECT d.name, d.tgl_lahir, d.gender,
         d.poin, d.nisn, d.email, d.phone, d.alamat, k.name AS KabupatenName,
@@ -117,10 +116,10 @@ class DataModel
 
 	public function searchAllAddress($data)
 	{
-		$query="SELECT * FROM kabupaten WHERE name LIKE :name ORDER BY name DESC";
+		$query = "SELECT * FROM kabupaten WHERE name LIKE :name ORDER BY name DESC";
 		$this->condb->query($query);
 		error_reporting(0);
-		$this->condb->bind('name','%'.$data.'%');
+		$this->condb->bind('name', '%' . $data . '%');
 		//$this->condb->execute();
 		return $this->condb->resultSet();
 	}
@@ -220,47 +219,46 @@ class DataModel
 			$temp_udata = $temp_udata + 1;
 			$data['id_udata'] = "UDAA" . sprintf("%06s", $temp_udata);
 			$data['id_user'] = "IDAA" . sprintf("%06s", $temp_udata);
-			$data['id_berkas'] = "BRAA" . sprintf("%06s",$temp_udata);
+			$data['id_berkas'] = "BRAA" . sprintf("%06s", $temp_udata);
 
-			$queryinsert="INSERT INTO `berkas`(`id_berkas`, `valid`, `raport`, `profilfoto`)
+			$queryinsert = "INSERT INTO `berkas`(`id_berkas`, `valid`, `raport`, `profilfoto`)
 			VALUES (:id_berkas , :valid , :raport , :profilfoto)";
 			$this->condb->query($queryinsert);
-			$this->condb->bind("valid",0);
-			$this->condb->bind("raport","undefined");
-			$this->condb->bind("profilfoto","undefined");
-			$this->condb->bind("id_berkas",$data['id_berkas']);
+			$this->condb->bind("valid", 0);
+			$this->condb->bind("raport", "undefined");
+			$this->condb->bind("profilfoto", "undefined");
+			$this->condb->bind("id_berkas", $data['id_berkas']);
 			$this->condb->execute();
 
-			$queryinsert="INSERT INTO `data_pengguna`(`id_udata`, `name`, `tgl_lahir`, `gender`, `poin`, `nisn`, `email`, `phone`, `alamat`, `id_kabupaten`, `id_peringkat`, `sekolah`, `tingkat`, `kelas`, `id_berkas`)
+			$queryinsert = "INSERT INTO `data_pengguna`(`id_udata`, `name`, `tgl_lahir`, `gender`, `poin`, `nisn`, `email`, `phone`, `alamat`, `id_kabupaten`, `id_peringkat`, `sekolah`, `tingkat`, `kelas`, `id_berkas`)
 			VALUES
 			( :id_udata , :name , :tgl_lahir , :gender, :poin, :nisn, :email , :phone, :alamat, 'KB000', 'PK001',:sekolah, :tingkat, :kelas, :id_berkas)";
 			$this->condb->query($queryinsert);
-			$this->condb->bind("id_udata",$data['id_udata']);
-			$this->condb->bind("name",$data['name']);
-			$this->condb->bind("tgl_lahir",$data['tgl_lahir']);
-			$this->condb->bind("gender",$data['gender']);
-			$this->condb->bind("poin",0);
-			$this->condb->bind("nisn",$data['nisn']);
-			$this->condb->bind("email",$data['email']);
-			$this->condb->bind("phone",$data['phone']);
-			$this->condb->bind("alamat","Belum mengisi alamat");
-			$this->condb->bind("sekolah",$data['sekolah']);
-			$this->condb->bind("tingkat",$data['tingkat']);
-			$this->condb->bind("kelas",$data['kelas']);
-			$this->condb->bind("id_berkas",$data['id_berkas']);
+			$this->condb->bind("id_udata", $data['id_udata']);
+			$this->condb->bind("name", $data['name']);
+			$this->condb->bind("tgl_lahir", $data['tgl_lahir']);
+			$this->condb->bind("gender", $data['gender']);
+			$this->condb->bind("poin", 0);
+			$this->condb->bind("nisn", $data['nisn']);
+			$this->condb->bind("email", $data['email']);
+			$this->condb->bind("phone", $data['phone']);
+			$this->condb->bind("alamat", "Belum mengisi alamat");
+			$this->condb->bind("sekolah", $data['sekolah']);
+			$this->condb->bind("tingkat", $data['tingkat']);
+			$this->condb->bind("kelas", $data['kelas']);
+			$this->condb->bind("id_berkas", $data['id_berkas']);
 			$this->condb->execute();
 
-			$queryinsert="INSERT INTO `pengguna`(`id_user`, `username`, `password`, `id_udata`, `status`, `reason`) VALUES
+			$queryinsert = "INSERT INTO `pengguna`(`id_user`, `username`, `password`, `id_udata`, `status`, `reason`) VALUES
 			(:id_user, :username, :password, :id_udata, :status, :reason)";
 			$this->condb->query($queryinsert);
-			$this->condb->bind("id_user",$data['id_user']);
-			$this->condb->bind("username",$data['username']);
-			$this->condb->bind("password",$data['password']);
-			$this->condb->bind("id_udata",$data['id_udata']);
-			$this->condb->bind("status","Active");
-			$this->condb->bind("reason","No Reason");
+			$this->condb->bind("id_user", $data['id_user']);
+			$this->condb->bind("username", $data['username']);
+			$this->condb->bind("password", $data['password']);
+			$this->condb->bind("id_udata", $data['id_udata']);
+			$this->condb->bind("status", "Active");
+			$this->condb->bind("reason", "No Reason");
 			$this->condb->execute();
-
 		}
 	}
 }
