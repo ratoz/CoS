@@ -6,7 +6,7 @@
     <div class="knob"></div>
     <div class="pendulum" style="color: white">Circle Of Science</div>
   </div>
-  <div class="shadow"></div>
+  <div class="shadow_a"></div>
 </div>
 
   <div class="container-fluid">
