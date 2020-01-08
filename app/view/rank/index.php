@@ -10,7 +10,7 @@
 
 		<div class="container-fluid">
 
-			<div class="form-search-wrap">
+			<div class="form-search-wrap bg-default rounded p-3">
 				<!-- data-aos="fade-up" data-aos-delay="100" -->
 
 				<form class="form-inline form-group" action="<?= BASEURL ?>Rank/searchData" method="post">

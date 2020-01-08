@@ -105,15 +105,23 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= BASEURL; ?>Login">
-            <i class="ni ni-key-25 text-info"></i> Masuk
+          <a class="nav-link <?php if ($data['page'] === 'about') echo "active"; ?>" href="<?= BASEURL; ?>about">
+            <i class="ni ni-app text-default"></i> Tentang Website
           </a>
         </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL; ?>Logout">
+            <i class="ni ni-key-25 text-info"></i> Keluar
+          </a>
+        </li>
+        <!--
         <li class="nav-item">
           <a class="nav-link" href="<?= BASEURL; ?>Register">
             <i class="ni ni-circle-08 text-pink"></i> Registrasi
           </a>
         </li>
+              -->
       </ul>
       <!-- Divider -->
       <hr class="my-3">

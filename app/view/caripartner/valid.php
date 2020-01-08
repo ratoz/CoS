@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
       <div class="col-xl-8 order-xl-1">
         <div class="card bg-secondary shadow">
-          <div class="card-header bg-white border-0">
+          <div class="card-header bg-secondary border-0">
             <div class="row align-items-center">
               <div class="col-12">
                 <div class="text-center">
