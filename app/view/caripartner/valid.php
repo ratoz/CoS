@@ -86,6 +86,7 @@
       </div>
     </div>
   </div>
+  <div class="container-fluid">
   <div class="row justify-content-center">
     <div class='col-xl-15 order-xl-1 pt-5'>
       <div class='card bg-secondary shadow'>
@@ -102,7 +103,17 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  </div>
+      <div class="container-fluid">
         <div class='card-body'>
           <form method='post' action='#'>
             <div class='pl'>
               <div class='table-responsive'>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
