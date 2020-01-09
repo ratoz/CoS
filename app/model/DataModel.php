@@ -384,27 +384,27 @@ class DataModel
 
 	public function ShowRating($id)
 	{
-
+		echo $id;
 		$query = "SELECT * FROM star_pengguna where id_receive = :id ";
 
 		$this->condb->query($query);
 		$this->condb->bind("id", $id);
 		$this->condb->execute();
 
-		$result = $this->condb->resultSet();
-
-		print_r('$result');
-		$data['rate_value'] = 0;
-		if ($result == 0) {
+		$result['data'] = $this->condb->resultSet();
+		print_r($result);
+		$count = $this->condb->rowCount();
+		$value['rate_value'] = 0;
+		if ($count == 0) {
 			$data['rate_times'] = 0;
 			$data['rate_bg'] = 0;
 			$data['rate_value'] = 0;
 		} else {
-			while ($result) {
-				$data['rate_value'] += $result['rate_poin'];
+			foreach ($result['data'] as $data) {
+				$value['rate_value'] += $data['rate_poin'];
 			}
 			$data['rate_times'] = $this->condb->rowCount();
-			$data['rate_value'] = ($data['rate_value'] / ($data['rate_times'] * 100)) * 5;
+			$data['rate_value'] = ($value['rate_value'] / ($data['rate_times'] * 100)) * 5;
 			$data['rate_bg'] = ($data['rate_value'] / 5) * 100;
 		}
 		return $data;
