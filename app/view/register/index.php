@@ -45,27 +45,14 @@
         <!-- Navbar items -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="../index.html">
+            <a class="nav-link nav-link-icon" href="<?=BASEURL?>">
               <i class="ni ni-planet"></i>
               <span class="nav-link-inner--text">Beranda</span>
             </a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="../examples/register.html">
-              <i class="ni ni-circle-08"></i>
-              <span class="nav-link-inner--text">Registrasi</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="../examples/login.html">
+            <a class="nav-link nav-link-icon" href="<?=BASEURL?>login">
               <i class="ni ni-key-25"></i>
               <span class="nav-link-inner--text">Masuk</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="../examples/profile.html">
-              <i class="ni ni-single-02"></i>
-              <span class="nav-link-inner--text">Profil</span>
             </a>
           </li>
         </ul>
