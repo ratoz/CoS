@@ -106,14 +106,17 @@ class Profile extends Controller
         $id = substr($_POST['kabupaten'], 1);
         $data['kabupaten'] = 'KB' . sprintf('%03d', $id);
         $data['id'] = $_SESSION['id']; //diganti dengan session
-        if (!empty($_FILES['raport'])) {
+        //print_r ($_FILES['raport']);
+        if ($_FILES['raport']['size']!==0) {
             $check = $model->selectDatawithID($_SESSION['id']);
             $idberkas = $check['id_berkas'];
             $data['raport'] = $model->ubahDataRaport($_FILES['raport'], $idberkas);
-            if ($data['raport'] == false) {
+            print_r($data['raport']);
+            if ($data['raport'] === false) {
                 header("Location: " . BASEURL . "Profile");
                 Alert::setMsg('Raport tidak boleh berekstensi selain PDF ataupun lebih dari 8MB', 'Gagal', 'danger');
             } else {
+                $model->ticket($check);
                 $model->ubahDataPengguna($data);
                 header("Location: " . BASEURL . "Profile");
                 Alert::setMsg('Data berhasil diubah! Mohon menunggu konfirmasi admin selama 1-3 hari kerja.', 'Berhasil', 'info');

@@ -51,6 +51,12 @@ $(function() {
         $("#from").html(data.email);
         $("#variant").html(data.jenis_ticket);
         $("#content").html(data.isi_ticket);
+        if (data.jenis_ticket=="Validasi"){
+          $("#validateacc").show();
+        }
+        else{
+          $("#validateacc").hide();
+        }
       }
     });
   });

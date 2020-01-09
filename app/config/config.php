@@ -2,6 +2,7 @@
 
 define('BASEURL', 'http://localhost/cos_mvc/public/');
 define('PATHFOTO', "img/profile/");
+define('PATHRAPORT', "img/rapotuser/");
 define('PATHJS', "http://localhost/cos_mvc/public/js/");
 define('PATHCSS', "http://localhost/cos_mvc/public/css/");
 
