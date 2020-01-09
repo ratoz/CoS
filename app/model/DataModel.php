@@ -54,9 +54,9 @@ class DataModel
 
 	public function selectDatawithID($id)
 	{
-		$this->condb->query('SELECT d.name, d.tgl_lahir, d.gender,
+		$this->condb->query('SELECT d.id_udata, d.name, d.tgl_lahir, d.gender,
         d.poin, d.nisn, d.email, d.phone, d.alamat, k.name AS KabupatenName,
-        p.name AS ProvinsiName, p.id_prov, d.sekolah,
+        p.name AS ProvinsiName, p.id_prov, d.sekolah, b.valid,
         r.name AS PeringkatName, d.id_berkas, b.profilfoto from data_pengguna d INNER JOIN kabupaten k
         ON d.id_kabupaten=k.id_kabupaten INNER JOIN provinsi p ON k.id_prov=p.id_prov INNER JOIN berkas b ON d.id_berkas=b.id_berkas
          INNER JOIN peringkat r ON r.id_peringkat=d.id_peringkat
@@ -284,7 +284,7 @@ class DataModel
 		if (empty($errors) == true) {
 
 			$file_name = "raport" . $id . "." . $file_ext;
-			move_uploaded_file($file_tmp, PATHFOTO . $file_name);
+			move_uploaded_file($file_tmp, PATHRAPORT . $file_name);
 
 			$query = "UPDATE berkas SET
 			raport = :pathraport
@@ -296,7 +296,7 @@ class DataModel
 
 			$this->condb->execute();
 
-			return $this->condb->rowCount();
+			return true;
 			//echo "Success";
 
 		} else {
@@ -304,29 +304,29 @@ class DataModel
 		}
 	}
 
-	public function ticket($data, $code)
+	public function ticket($data)
 	{
-		$id = $this->getidCount();
-		$id++;
+		print_r($data);
+		$query = "INSERT INTO `help_ticket`(`name`, `email`, `judul_ticket`, `jenis_ticket`, `isi_ticket`, `status`) VALUES ( :name, :email, :judul , :tipe , :code, :status)";
 
-		$query = "INSERT INTO help_ticket 
-    VALUES (:id, 'Forget Password', :email, 'Forget Password', 'Forget Password', :code, 'Unread');";
+		$this->condb->query($query);
+		$this->condb->bind("judul", 'Validasi Rapot');
+		$this->condb->bind("tipe", 'Validasi');
+		$this->condb->bind("name", $data['id_berkas'].",".$data['name']);
+		$this->condb->bind("email", $data['email']);
+		$this->condb->bind("code", 'Validasi rapot untuk menggunakan fitur cari partner.');
+		$this->condb->bind("status","Unread");
 
-		$this->db->query($query);
-		$this->db->bind("id", $id);
-		$this->db->bind("email", $data['email_forget']);
-		$this->db->bind("code", $code);
-
-		$this->db->execute();
+		$this->condb->execute();
 	}
 
 	public function getidCount()
 	{
 		$query = "SELECT * FROM help_ticket";
 
-		$this->db->query($query);
-		$this->db->execute();
+		$this->condb->query($query);
+		$this->condb->execute();
 
-		return $this->db->rowCount();
+		return $this->condb->rowCount();
 	}
 }

@@ -105,4 +105,12 @@ class HelpModel extends Controller
 
         return true;
     }
+
+    public function changeValid($id){
+        $query = "UPDATE berkas SET valid = 1 where id_berkas = :id";
+        $this->db->query($query);
+        $this->db->bind("id", $id);
+        $this->db->execute();
+
+    }
 }

@@ -137,7 +137,7 @@
               </div>
             </div>
             <div class="card-body">
-              <form id='form-profile' action="<?= BASEURL ?>Profile/updateDataPengguna" method="POST">
+              <form id='form-profile' action="<?= BASEURL ?>Profile/updateDataPengguna" method="POST" enctype="multipart/form-data">
                 <h6 class="heading-small text-muted mb-4">Informasi Pengguna</h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -245,9 +245,17 @@
                 </div>
                 <hr class="my-4" />
                 <!-- Description -->
+
                 <h6 class="heading-small text-muted mb-4">Verifikasi Berkas</h6>
                 <div class="pl-lg-4">
                   <div id="uploadfile" class="row" style="display:none">
+                  <?php if($data['profil']['valid']==1){ ?>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <p class="text-black">Anda telah terverifikasi.</p>
+                      </div>
+                    </div>
+                  <?php } else { ?>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-rapot">File Rapot</label>
@@ -256,6 +264,7 @@
                         <p class="text-muted">Catatan: Verifikasi berkas memerlukan waktu 1-3 hari waktu kerja. Pastikan dimensi gambar harus sama.</p>
                       </div>
                     </div>
+                  <?php }?>
                     <div class="col-md-12">
                       <div class="d-flex justify-content-end">
                         <button id="acceptupdate" type="button" class="btn btn-success" data-toggle="modal" data-target="#alertupdate">Accept</button>
@@ -269,16 +278,31 @@
                       </div>
                     </div>
                   </div>
-                  <div id="verifiedstatus" class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <div class="d-flex justify-content-center">
-                          <i class="fa fa-times fa-5x text-danger" aria-hidden="true"></i>
+                  <?php if ($data['edit'] == true) {
+                    if ($data['profil']['valid'] == 1) { ?>
+                      <div id="verifiedstatus" class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="d-flex justify-content-center">
+                              <i class="fa fa-check fa-5x text-success" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="text-center">Akun anda telah terverifikasi.<h4>
+                          </div>
                         </div>
-                        <h4 class="text-center">Akun anda belum terverifikasi. Mohon mengupload rapot sekolah anda di Edit Profil<h4>
                       </div>
-                    </div>
-                  </div>
+                    <?php } else { ?>
+                      <div id="verifiedstatus" class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="d-flex justify-content-center">
+                              <i class="fa fa-times fa-5x text-danger" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="text-center">Akun anda belum terverifikasi. Mohon mengupload rapot sekolah anda di Edit Profil<h4>
+                          </div>
+                        </div>
+                      </div>
+                  <?php }
+                  } ?>
                 </div>
               </form>
             </div>
