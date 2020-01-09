@@ -1,3 +1,5 @@
+
+
   $(document).ready(function() {
 
     // Selector input yang akan menampilkan autocomplete.
@@ -19,8 +21,6 @@
       minLength: 2,
     });
 
-
-
     $('#search').click(function() {
       var name = $('#name').val();
       $.ajax({
@@ -32,6 +32,21 @@
         dataType: 'html',
         success: function(data) {
           $('#tableCari').html(data);
+        }
+      })
+    });
+
+    $('#pagination li').click(function(){
+      $('#pagination li').removeClass('active')
+      $(this).addClass('active');
+      var page = $(this).text();
+      $.ajax({
+        url:'http://localhost/cos_mvc/public/Dashboard/showPagination',
+        data: {page:page},
+        method:'post',
+        dataType:'html',
+        success: function(data){
+          $('#tableinit').html(data);
         }
       })
     });

@@ -1,6 +1,6 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
-<!-- 
+  <!-- 
 <div class="base">
   <div class="holder"></div>
   <div class="thread">
@@ -10,21 +10,21 @@
 </div>
 <br>
 -->
-<div class="container-fluid mb-4">
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " style="height: 250px; object-fit: cover" src="img/slide3.jpg" alt="Third slide">
+  <div class="container-fluid mb-4">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100 " style="height: 250px; object-fit: cover" src="img/slide3.jpg" alt="Third slide">
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
 
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
@@ -72,7 +72,7 @@
         </h1>
       </div>
       <div class="table-responsive">
-        <Table class="table align-items-center table-light table-flush" id='partnerTable'>
+        <Table id="tableinit" class="table align-items-center table-light table-flush" id='partnerTable'>
           <tr>
             <th>Nama</th>
             <th>Sekolah</th>
@@ -84,7 +84,19 @@
           </tr>
           <?= $data['inittable'] ?>
         </TABLE>
+
       </div>
+
+      <nav aria-label="Page navigation example">
+          <ul id="pagination" class="pagination justify-content-center">
+
+            <?php for ($i=1; $i <= $data['pagination']; $i++){ ?>
+            <li class="page-item <?php if($i==1){echo "active";} ?>"><a id="page-<?=$i?>" class="page-link" href="javascript:void(0)"><?=$i?></a></li>
+            <?php } ?>
+
+          </ul>
+        </nav>
+
     </div>
     <br>
     <br>
