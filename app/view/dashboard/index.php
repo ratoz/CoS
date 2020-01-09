@@ -1,6 +1,5 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
-<<<<<<< HEAD
   <!-- 
 <div class="base">
   <div class="holder"></div>
@@ -27,8 +26,6 @@
     </div>
   </div>
 
-=======
->>>>>>> 70eb52778be89bc7d410863bd0b8ee00e8bd740d
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
@@ -74,13 +71,8 @@
           </span>
         </h1>
       </div>
-<<<<<<< HEAD
       <div class="table-responsive">
         <Table id="tableinit" class="table align-items-center table-light table-flush" id='partnerTable'>
-=======
-      <div class="table-responsive px-3">
-        <Table class="table align-items-center table-light table-flush" id='partnerTable'>
->>>>>>> 70eb52778be89bc7d410863bd0b8ee00e8bd740d
           <tr>
             <th>Nama</th>
             <th>Sekolah</th>

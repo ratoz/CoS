@@ -73,6 +73,7 @@
               </div>
               <hr class="my-4" />
               <!-- Start Ratings -->
+              <?php if ($data['edit']==false){ ?>
               <div class="">
                 <div class="rate">
                   <div id="1" class="btn-1 rate-btn"></div>
@@ -90,6 +91,7 @@
                   <p style="margin:5px 0px; font-size:16px; text-align:center">Rated <strong><?php echo substr($data['profil']['rating']['rate_value'], 0, 3); ?></strong> out of <?php echo $data['profil']['rating']['rate_times']; ?> Review(s)</p>
                 </div>
               </div>
+              <?php } ?>
 
               <!-- End Ratings -->
               <a href="#">Tampilkan Lebih Banyak</a>

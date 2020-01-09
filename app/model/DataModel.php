@@ -329,6 +329,7 @@ class DataModel
 
 		return $this->condb->rowCount();
 	}
+
 	public function Rating($datarate)
 	{
 		print_r($datarate);
@@ -391,6 +392,8 @@ class DataModel
 		$this->condb->execute();
 
 		$result = $this->condb->resultSet();
+
+		print_r('$result');
 		$data['rate_value'] = 0;
 		if ($result == 0) {
 			$data['rate_times'] = 0;

@@ -15,7 +15,6 @@ class Profile extends Controller
             $data['profil']['age'] = $model->getAge($data['profil']['tgl_lahir']);
             $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
             $data['profil']['prov'] = $model->selectAllDataAddress('prov');
-            $data['profil']['rating']= $model->ShowRating('UDAA000002');
             $this->view('templates/header', $data); //memanggil file header pada folder templates
             $this->view('templates/navbar', $data);
             $this->view('profile/index', $data); //memanggil file index pada folder dashboard
@@ -32,6 +31,7 @@ class Profile extends Controller
         $model = $this->model('DataModel');
         $url = explode('/', $_GET['url']);
         $data['profil'] = $model->selectDatawithID($url[2]); //diganti dengan session
+        $data['profil']['rating']= $model->ShowRating($url[2]);
         $data['profil']['age'] = $model->getAge($data['profil']['tgl_lahir']);
         $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
         $data['profil']['prov'] = $model->selectAllDataAddress('prov');

@@ -261,5 +261,43 @@ $(document).ready(function () {
   });
 
 
+  $('.rate-btn').hover(function () {
+    $('.rate-btn').removeClass('rate-btn-hover');
+    var therate = $(this).attr('id');
+    for (var i = therate; i >= 0; i--) {
+      $('.btn-' + i).addClass('rate-btn-hover');
+    };
+  });
+
+  $('.rate-btn').click(function () {
+    var therate = $(this).attr('id');
+    var dataRate = therate;
+    var id_receive = 'UDAA000002';
+    var id_send = 'UDAA000003' //
+    $('.rate-btn').removeClass('rate-btn-active');
+    for (var i = therate; i >= 0; i--) {
+      $('.btn-' + i).addClass('rate-btn-active');
+    };
+    $.ajax({
+      method: "POST",
+      url: "http://localhost/akbarcos2/public/Profile/starRating",
+      data: {dataRate:dataRate,receive:id_receive,send:id_send},
+      success: function (data) {
+       }
+    });
+    $.ajax({
+      method: "POST",
+      url: "http://localhost/akbarcos2/public/Profile/showRating",
+      dataType: 'html',
+      success: function (data) {
+        console.log(data);
+        $('.box-result').html(data);
+       }
+    });
+    
+  });
+
+
+
 
 });
