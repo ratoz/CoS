@@ -1,5 +1,6 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
+<<<<<<< HEAD
   <!-- 
 <div class="base">
   <div class="holder"></div>
@@ -26,6 +27,8 @@
     </div>
   </div>
 
+=======
+>>>>>>> 70eb52778be89bc7d410863bd0b8ee00e8bd740d
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
@@ -71,8 +74,13 @@
           </span>
         </h1>
       </div>
+<<<<<<< HEAD
       <div class="table-responsive">
         <Table id="tableinit" class="table align-items-center table-light table-flush" id='partnerTable'>
+=======
+      <div class="table-responsive px-3">
+        <Table class="table align-items-center table-light table-flush" id='partnerTable'>
+>>>>>>> 70eb52778be89bc7d410863bd0b8ee00e8bd740d
           <tr>
             <th>Nama</th>
             <th>Sekolah</th>
@@ -124,35 +132,35 @@
 
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Akbar Hari Mukti</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="url(); public/img/profile/akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Herlandro Tribiakto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/mutt.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Muttafiah</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/raka0.jpg" style="object-fit: cover; height: 60%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Rhaka Novyansyah Dewanto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/anash.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Ahmad Nashrudin</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
@@ -163,7 +171,7 @@
 
         <div class="container-fluid">
           <div class="row justify-content-center mt-5">
-            <a href="#" class="btn btn-primary rounded py-2 px-4 text-white">Tentang Website</a>
+            <a href="<?=BASEURL?>about" class="btn btn-primary rounded py-2 px-4 text-white">Tentang Website</a>
           </div>
         </div>
 

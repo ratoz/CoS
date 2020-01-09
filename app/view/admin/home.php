@@ -10,37 +10,6 @@
           Circle Of Science
         </center>
       </h2>
-      <!-- User -->
-      <ul class="nav align-items-center d-md-none">
-
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="media align-items-center">
-              <span class="avatar avatar-sm rounded-circle">
-                <img alt="" src="">
-              </span>
-            </div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-            <div class=" dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Selamat Datang</h6>
-            </div>
-            <a href="./examples/profile.php" class="dropdown-item">
-              <i class="ni ni-single-02"></i>
-              <span>Profil Saya</span>
-            </a>
-            <a href="./examples/profile.php" class="dropdown-item">
-              <i class="ni ni-settings-gear-65"></i>
-              <span>Pengaturan</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
-              <i class="ni ni-user-run"></i>
-              <span>Keluar</span>
-            </a>
-          </div>
-        </li>
-      </ul>
       <!-- Collapse -->
       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
         <!-- Collapse header -->
@@ -76,12 +45,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./examples/rank.php">
-              <i class="ni ni-bullet-list-67 text-red"></i> Delete
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./examples/login.php">
+            <a class="nav-link" href="<?=BASEURL?>admin">
               <i class="ni ni-key-25 text-info"></i> Logout
             </a>
           </li>

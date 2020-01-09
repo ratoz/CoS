@@ -312,10 +312,10 @@ class DataModel
 		$this->condb->query($query);
 		$this->condb->bind("judul", 'Validasi Rapot');
 		$this->condb->bind("tipe", 'Validasi');
-		$this->condb->bind("name", $data['id_berkas'].",".$data['name']);
+		$this->condb->bind("name", $data['id_berkas'] . "," . $data['name']);
 		$this->condb->bind("email", $data['email']);
 		$this->condb->bind("code", 'Validasi rapot untuk menggunakan fitur cari partner.');
-		$this->condb->bind("status","Unread");
+		$this->condb->bind("status", "Unread");
 
 		$this->condb->execute();
 	}
@@ -328,5 +328,82 @@ class DataModel
 		$this->condb->execute();
 
 		return $this->condb->rowCount();
+	}
+	public function Rating($datarate)
+	{
+		print_r($datarate);
+		$therate = $datarate['dataRate'] * 20;
+		$receive = $datarate['receive'];
+		$send = $datarate['send'];
+
+		$query = "SELECT * FROM star_pengguna WHERE id_send = :send ";
+
+		$this->condb->query($query);
+		$this->condb->bind("send", $send);
+		$this->condb->execute();
+
+		$result = $this->condb->resultSet();
+		if ($result == 0) {
+			echo "KN";
+			// mengambil id datauser (maksimum)
+			$query = "SELECT MAX(id_star) FROM star_pengguna";
+
+			$this->condb->query($query);
+			$this->condb->execute();
+
+			$data = $this->condb->resultSet();
+			// data id_datauser terakhir disimpan ke variabel baru $MaxID
+			$MaxID = $data[0];
+			$temp_udata = (int) substr($MaxID, 4, 6);
+			// lalu ditambah 1
+			$temp_udata = $temp_udata + 1;
+
+			echo $id_star = "STAA" . sprintf("%06s", $temp_udata);
+			$query = "INSERT INTO star_pengguna VALUES (:id_star,{intval($therate)},:receive,:send)";
+
+			$this->condb->bind("id_star", $id_star);
+			$this->condb->bind("receive", $receive);
+			$this->condb->bind("send", $send);
+			if ($this->condb->query($query)) {
+				echo "New record created successfully";
+			} else {
+				echo "Error: " . $query . "<br>";
+			}
+			//mysqli_query($conn, ;
+		} else {
+			echo "TL";
+			$query = "UPDATE star_pengguna SET rate_poin=$therate where id_send=:receive";
+			if ($this->condb->query($query)) {
+				echo "New record created successfully";
+			} else {
+				echo "Error: " . $query . "<br>";
+			}
+		}
+	}
+
+	public function ShowRating($id)
+	{
+
+		$query = "SELECT * FROM star_pengguna where id_receive = :id ";
+
+		$this->condb->query($query);
+		$this->condb->bind("id", $id);
+		$this->condb->execute();
+
+		$result = $this->condb->resultSet();
+		$data['rate_value'] = 0;
+		if ($result == 0) {
+			$data['rate_times'] = 0;
+			$data['rate_bg'] = 0;
+			$data['rate_value'] = 0;
+		} else {
+			while ($result) {
+				$data['rate_value'] += $result['rate_poin'];
+			}
+			$data['rate_times'] = $this->condb->rowCount();
+			$data['rate_value'] = ($data['rate_value'] / ($data['rate_times'] * 100)) * 5;
+			$data['rate_bg'] = ($data['rate_value'] / 5) * 100;
+		}
+		return $data;
 	}
 }
