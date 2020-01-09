@@ -17,8 +17,10 @@
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-            <?php if (empty($data['path'])){$data['path']=PATHFOTO;}
-              if (!file_exists($data['path'].$data['foto']['profilfoto'])) {
+              <?php if (empty($data['path'])) {
+                $data['path'] = PATHFOTO;
+              }
+              if (!file_exists($data['path'] . $data['foto']['profilfoto'])) {
                 if ($data['profil']['gender'] === "Laki-Laki") { ?>
                   <img id="changeimg" src="<?= $data['path'] . "man.svg" ?>" class="rounded-circle">
                 <?php } else { ?>
@@ -26,7 +28,7 @@
                 <?php } ?>
 
               <?php } else { ?>
-                <img id="changeimg" src="<?= $data['path'].$data['foto']['profilfoto'] ?>" class="rounded-circle">
+                <img id="changeimg" src="<?= $data['path'] . $data['foto']['profilfoto'] ?>" class="rounded-circle">
               <?php } ?>
 
 
@@ -75,7 +77,7 @@
       <ul class="navbar-nav">
         <li class="nav-item <?php if ($data['page'] === 'dashboard') echo "active"; ?>">
           <a class=" nav-link " href="<?= BASEURL; ?>Dashboard">
-          <i class="ni ni-tv-2 text-primary"></i> Beranda
+            <i class="ni ni-tv-2 text-primary"></i> Beranda
           </a>
         </li>
         <li class="nav-item">
@@ -98,7 +100,7 @@
             <i class="ni ni-app text-default"></i> Tentang Website
           </a>
         </li>
-         
+
         <li class="nav-item">
           <a class="nav-link" href="<?= BASEURL; ?>Logout">
             <i class="ni ni-key-25 text-info"></i> Keluar
@@ -124,7 +126,7 @@
   <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
     <div class="container-fluid">
       <!-- Brand -->
-      <span class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" >
+      <span class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block">
         <?php switch ($data['page']) {
           case 'dashboard':
             $output = "Beranda";
@@ -134,23 +136,24 @@
             $output = "Peringkat";
             break;
 
-            case 'profile':
-              $output ="Profil Saya";
-              break;
+          case 'profile':
+            $output = "Profil Saya";
+            break;
 
-              case 'caripartner':
-                $output ="Cari Partner";
-                break;
-          
+          case 'caripartner':
+            $output = "Cari Partner";
+            break;
+
           default:
-          $output = "Null";
-            break;}
+            $output = "Null";
+            break;
+        }
 
-            if ($data['page']==='touser'){
-              $output = "Profil User";
-            }
+        if ($data['page'] === 'touser') {
+          $output = "Profil User";
+        }
 
-            echo $output;
+        echo $output;
         ?>
       </span>
       <!-- User -->
@@ -160,17 +163,19 @@
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
 
-              <?php if (empty($data['path'])){$data['path']=PATHFOTO;}
-              if (!file_exists(PATHFOTO.$data['foto']['profilfoto'])) {
-                if ($data['profil']['gender'] === "Laki-Laki") { ?>
-                  <img id="changeimg" src="<?= $data['path'] . "man.svg" ?>" class="rounded-circle">
-                <?php } else { ?>
-                  <img id="changeimg" src="<?= $data['path']  . "girl.svg" ?>" class="rounded-circle">
-                <?php } ?>
+                <?php if (empty($data['path'])) {
+                  $data['path'] = PATHFOTO;
+                }
+                if (!file_exists(PATHFOTO . $data['foto']['profilfoto'])) {
+                  if ($data['profil']['gender'] === "Laki-Laki") { ?>
+                    <img id="changeimg" src="<?= $data['path'] . "man.svg" ?>" class="rounded-circle">
+                  <?php } else { ?>
+                    <img id="changeimg" src="<?= $data['path']  . "girl.svg" ?>" class="rounded-circle">
+                  <?php } ?>
 
-              <?php } else { ?>
-                <img id="changeimg" src="<?= $data['path']  . $data['foto']['profilfoto'] ?>" class="rounded-circle">
-              <?php } ?>
+                <?php } else { ?>
+                  <img id="changeimg" src="<?= $data['path']  . $data['foto']['profilfoto'] ?>" class="rounded-circle">
+                <?php } ?>
 
               </span>
               <div class="media-body ml-2 d-none d-lg-block">

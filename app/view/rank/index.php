@@ -5,7 +5,7 @@
 	<div class="container-fluid">
 
 		<div class="container-fluid text-center d-flex justify-content-center">
-				<h3 class="letter shadow-lg p-2 bg-white rounded mb-3">Top Rank User</h3>
+			<h3 class="letter shadow-lg p-2 bg-white rounded mb-3">Top Rank User</h3>
 		</div>
 
 		<div class="container-fluid">
@@ -19,24 +19,24 @@
 					</div>
 					<div class="col-5 d-flex d-inline-block">
 						<ul class="list-inline">
-						<li class="list-inline-item">
-						<input type="radio" id="radio_semua" class="gender" name="gender" value="semua" checked>
-						</li>
-						<li class="list-inline-item">
-						<label for="radio_semua" class="text-white">Semua</label>
-						</li>
-						<li class="list-inline-item">
-						<input type="radio" id="radio_male" class="gender" name="gender" value="male">
-						</li>
-						<li class="list-inline-item">
-						<label for="radio_male" class="text-white">Laki-Laki</label>
-						</li>
-						<li class="list-inline-item">
-						<input type="radio" id="radio_female"  class="gender" name="gender" value="female">
-						</li>
-						<li class="list-inline-item">
-						<label for="radio_female" class="text-white">Perempuan</label>
-						</li>
+							<li class="list-inline-item">
+								<input type="radio" id="radio_semua" class="gender" name="gender" value="semua" checked>
+							</li>
+							<li class="list-inline-item">
+								<label for="radio_semua" class="text-white">Semua</label>
+							</li>
+							<li class="list-inline-item">
+								<input type="radio" id="radio_male" class="gender" name="gender" value="male">
+							</li>
+							<li class="list-inline-item">
+								<label for="radio_male" class="text-white">Laki-Laki</label>
+							</li>
+							<li class="list-inline-item">
+								<input type="radio" id="radio_female" class="gender" name="gender" value="female">
+							</li>
+							<li class="list-inline-item">
+								<label for="radio_female" class="text-white">Perempuan</label>
+							</li>
 						</ul>
 					</div>
 					<button type="submit" class="btn btn-primary mb-2 col-2" id="search"> Search </button>

@@ -4,51 +4,51 @@ class Admin extends Controller
 {
 	public function index()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data['title'] = 'Admin Login';
 
 		$this->view('templates/header', $data);
 		$this->view('admin/index');
-		$this->view('templates/footer',$data);
+		$this->view('templates/footer', $data);
 	}
 
 	public function home()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data['title'] = 'Dashboard';
 
 		$data['user'] = $this->showData();
 
 		$this->view('templates/header', $data);
 		$this->view('admin/home', $data);
-		$this->view('templates/footer',$data);
+		$this->view('templates/footer', $data);
 	}
 
 	public function edit_user()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data['title'] = 'Edit Pengguna';
 		$data['user'] = $this->showData();
 
 		$this->view('templates/header', $data);
 		$this->view('admin/edit_user', $data);
-		$this->view('templates/footer',$data);
+		$this->view('templates/footer', $data);
 	}
 
 	public function help()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data['title'] = 'Help';
 		$data['ticket'] = $this->help_ticket();
 
 		$this->view('templates/header', $data);
 		$this->view('admin/help', $data);
-		$this->view('templates/footer',$data);
+		$this->view('templates/footer', $data);
 	}
 
 	public function showData()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data['user'] = $this->model('AdminModel')->showDataUser();
 		$data['nullData'] = "Data Kosong";
 
@@ -61,7 +61,7 @@ class Admin extends Controller
 
 	public function search()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		if (isset($_POST['keyword'])) {
 			$data['user'] = $this->model('AdminModel')->searchModel($_POST);
 
@@ -69,7 +69,7 @@ class Admin extends Controller
 				$data['title'] = "edit user";
 				$this->view('templates/header', $data);
 				$this->view('admin/edit_user', $data);
-				$this->view('templates/footer',$data);
+				$this->view('templates/footer', $data);
 			} else {
 				Alert::setMsg("Data tidak", " ditemukan", "Danger");
 				header("Location: " . BASEURL . "admin/edit_user");
@@ -79,7 +79,7 @@ class Admin extends Controller
 
 	public function editData()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		if (empty($_POST['reason'])) {
 			$_POST['reason'] = 'No Reason';
 		}
@@ -128,7 +128,7 @@ class Admin extends Controller
 
 	public function deleteUser()
 	{
-		$data['page']='admin';
+		$data['page'] = 'admin';
 		$data = $this->model('AdminModel')->deleteUserById($_POST);
 
 		if ($data) {

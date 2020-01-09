@@ -91,14 +91,15 @@ class HelpModel extends Controller
         return $this->db->single();
     }
 
-    public function modelSetRead($data) {
+    public function modelSetRead($data)
+    {
         $query = "UPDATE help_ticket 
         SET status = :status 
         WHERE id_ticket = :id";
 
         $this->db->query($query);
-        $this->db->bind("status",$data['status']);
-        $this->db->bind("id",$data['id']);
+        $this->db->bind("status", $data['status']);
+        $this->db->bind("id", $data['id']);
 
         $this->db->execute();
 
