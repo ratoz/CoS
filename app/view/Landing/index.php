@@ -7,17 +7,17 @@
 
     <title>Circle Of Science</title>
 
-    <link href="css/font.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/others/animate.css" rel="stylesheet">
-    <link href="css/others/magnific-popup.css" rel="stylesheet">
-    <link href="css/others/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/others/font-awesome.min.css" rel="stylesheet">
-    <link href="css/others/elegant-font.css" rel="stylesheet">
-    <link href="css/others/themify-icons.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/font.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/style.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/animate.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/magnific-popup.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/elegant-font.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/others/themify-icons.css" rel="stylesheet">
 
-    <link href="css/responsive/responsive.css" rel="stylesheet">
+    <link href="<?= BASEURL ?>css/responsive/responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -74,8 +74,8 @@
                               <span class="line"></span>
                             </span>
                           </h1>
-                        <a href="#" class="btn fancy-btn fancy-active">Registrasi</a>
-                        <a href="#" class="btn fancy-btn fancy">Masuk</a>
+                        <a href="<?= BASEURL ?>register" class="btn fancy-btn fancy-active">Registrasi</a>
+                        <a href="<?= BASEURL ?>login" class="btn fancy-btn fancy">Masuk</a>
                     </div>
                 </div>
             </div>
@@ -210,16 +210,16 @@
     <!-- ***** Footer Area End ***** -->
 
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="<?= BASEURL ?>js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="<?= BASEURL ?>js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap-4 js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="<?= BASEURL ?>js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/others/plugins.js"></script>
+    <script src="<?= BASEURL ?>js/others/plugins.js"></script>
     <!-- Active JS -->
-    <script src="js/active.js"></script>
+    <script src="<?= BASEURL ?>js/active.js"></script>
     <!-- Animation Text JS -->
-    <script src="js/javascript/anime.min.js"></script>
-    <script src="js/javascript/text.js"></script>
+    <script src="<?= BASEURL ?>js/javascript/anime.min.js"></script>
+    <script src="<?= BASEURL ?>js/javascript/text.js"></script>
 </body>
