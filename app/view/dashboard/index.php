@@ -45,7 +45,7 @@
           </span>
         </h1>
       </div>
-      <div class="table-responsive">
+      <div class="table-responsive px-3">
         <Table class="table align-items-center table-light table-flush" id='partnerTable'>
           <tr>
             <th>Nama</th>
@@ -86,14 +86,14 @@
 
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Akbar Hari Mukti</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="url(); public/img/profile/akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Herlandro Tribiakto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
