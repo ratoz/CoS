@@ -15,6 +15,7 @@ class Profile extends Controller
             $data['profil']['age'] = $model->getAge($data['profil']['tgl_lahir']);
             $data['profil']['gender'] = $model->getGender($data['profil']['gender']);
             $data['profil']['prov'] = $model->selectAllDataAddress('prov');
+            $data['profil']['rating']= $model->ShowRating('UDAA000002');
             $this->view('templates/header', $data); //memanggil file header pada folder templates
             $this->view('templates/navbar', $data);
             $this->view('profile/index', $data); //memanggil file index pada folder dashboard
@@ -107,7 +108,7 @@ class Profile extends Controller
         $data['kabupaten'] = 'KB' . sprintf('%03d', $id);
         $data['id'] = $_SESSION['id']; //diganti dengan session
         //print_r ($_FILES['raport']);
-        if ($_FILES['raport']['size']!==0) {
+        if ($_FILES['raport']['size'] !== 0) {
             $check = $model->selectDatawithID($_SESSION['id']);
             $idberkas = $check['id_berkas'];
             $data['raport'] = $model->ubahDataRaport($_FILES['raport'], $idberkas);
@@ -126,5 +127,26 @@ class Profile extends Controller
             header("Location: " . BASEURL . "Profile");
             Alert::setMsg('Data berhasil diubah!', 'Berhasil', 'info');
         }
+    }
+
+    public function starRating()
+    {
+        $data['dataRate'] = $_POST['dataRate'];
+        $data['receive'] = $_POST['receive'];
+        $data['send'] = $_POST['send'];
+        //echo "ok";
+        $this->model('DataModel')->Rating($data);
+    }
+
+    public function showRating()
+    {
+        $data['profil']['rating'] = $this->model('DataModel')->ShowRating('UDAA000002');
+?>
+        <div class="result-container">
+            <div class="rate-bg" style="width:<?php echo $data['profil']['rating']['rate_bg']; ?>"></div>
+            <div class="rate-stars"></div>
+        </div>
+        <p style="margin:5px 0px; font-size:16px; text-align:center">Rated <strong><?php echo substr($data['profil']['rating']['rate_value'], 0, 3); ?></strong> out of <?php echo $data['profil']['rating']['rate_times']; ?> Review(s)</p>
+<?php
     }
 }

@@ -329,4 +329,68 @@ class DataModel
 
 		return $this->condb->rowCount();
 	}
+	public function Rating($datarate)
+	{
+		$conn = mysqli_connect('localhost', 'root', '', 'akbarcos');
+		//echo "KNTL2";
+		
+			print_r ($datarate);
+			$therate = $datarate['dataRate']*20;
+			$receive = $datarate['receive'];
+			$send = $datarate['send'];
+			$result = mysqli_query($conn, "SELECT * FROM star_pengguna where id_send = '$send' ");
+			if (mysqli_num_rows($result) == 0) {
+				echo "KN";
+				// mengambil id datauser (maksimum)
+				$sql		= "select MAX(id_star) from star_pengguna";
+				$hasil	= mysqli_query($conn, $sql);
+				$data		= mysqli_fetch_array($hasil);
+
+				// data id_datauser terakhir disimpan ke variabel baru $MaxID
+				$MaxID = $data[0];
+				$temp_udata = (int) substr($MaxID, 4, 6);
+				// lalu ditambah 1
+				$temp_udata = $temp_udata + 1;
+
+				echo $id_star = "STAA" . sprintf("%06s", $temp_udata);
+				$sql="INSERT INTO star_pengguna VALUES ('$id_star',{intval($therate)},'$receive','$send')";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "New record created successfully";
+				} else {
+					echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+				//mysqli_query($conn, ;
+				}
+			else{
+				echo "TL";
+				$sql="UPDATE star_pengguna SET rate_poin=$therate where id_send='UDAA000003'";
+				if (mysqli_query($conn, $sql)) {
+					echo "New record created successfully";
+				} else {
+					echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+			}
+		
+	}
+
+	public function ShowRating($id)
+	{
+		$conn = mysqli_connect('localhost', 'root', '', 'akbarcos');
+		$result = mysqli_query($conn, "SELECT * FROM star_pengguna where id_receive = '$id' ");
+		$data['rate_value'] = 0;
+		if (mysqli_num_rows($result) == 0) {
+			$data['rate_times'] = 0;
+			$data['rate_bg'] = 0;
+			$data['rate_value'] = 0;
+		} else {
+			while ($datad = mysqli_fetch_assoc($result)) {
+				$data['rate_value'] += $datad['rate_poin'];
+			}
+			$data['rate_times'] = mysqli_num_rows($result);
+			$data['rate_value'] = ($data['rate_value'] / ($data['rate_times'] * 100)) * 5;
+			$data['rate_bg'] = ($data['rate_value'] / 5) * 100;
+		}
+		return $data;
+	}
 }
