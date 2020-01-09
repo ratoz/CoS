@@ -1,31 +1,5 @@
 <div class="header bg-gradient-success pb-4 pt-5 pt-md-6">
 
-<!-- 
-<div class="base">
-  <div class="holder"></div>
-  <div class="thread">
-    <div class="pendulum" style="color: white">Circle Of Science</div>
-  </div>
-  <div class="shadow"></div>
-</div>
-<br>
--->
-<div class="container-fluid mb-4">
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" style="height: 250px; object-fit: cover" src="img/slide2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 " style="height: 250px; object-fit: cover" src="img/slide3.jpg" alt="Third slide">
-    </div>
-  </div>
-</div>
-</div>
-
   <div class="container-fluid">
     <div class="form-search-wrap bg-default p-3 rounded" data-aos="fade-up" data-aos-delay="200">
 
@@ -112,7 +86,7 @@
 
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Akbar Hari Mukti</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
@@ -151,7 +125,7 @@
 
         <div class="container-fluid">
           <div class="row justify-content-center mt-5">
-            <a href="#" class="btn btn-primary rounded py-2 px-4 text-white">Tentang Website</a>
+            <a href="<?=BASEURL?>about" class="btn btn-primary rounded py-2 px-4 text-white">Tentang Website</a>
           </div>
         </div>
 
