@@ -10,9 +10,13 @@ class Dashboard extends Controller
         else{
 		$data['page'] = 'dashboard';
 		$data['inittable']='';
+
 		$result = $this->model('DataModel')->selectAllData();
+		$data['count']=count($result);
+		$data['pagination']=$data['count']/10;
+
 		$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
-		foreach($result as $value){
+		foreach(array_slice($result,0,10) as $value){
 			$data['inittable'].= "
 				<tr>
 					<td> " . $value['name'] . " </td>
@@ -35,6 +39,41 @@ class Dashboard extends Controller
 		$this->view('dashboard/index', $data); //memanggil file index pada folder dashboard
 		$this->view('templates/footer', $data); //memanggil file footer pada folder templates
 	}
+
+	public function showPagination(){
+		$result = $this->model('DataModel')->selectAllData();
+		$data['count']=count($result);
+		$data['pagination']=$data['count']/10;
+		$min=10*($_POST['page']-1);
+		$max=10;
+		$data['foto'] = $this->model('DataModel')->selectDatawithID($_SESSION['id']);
+		echo "<tr>
+		<th>Nama</th>
+		<th>Sekolah</th>
+		<th>Kelas</th>
+		<th>Tingkat</th>
+		<th>No Hp</th>
+		<th>Email</th>
+		<th>Action</th>
+	  </tr>";
+		foreach(array_slice($result,$min,$max) as $value){
+			echo "
+				<tr>
+					<td> " . $value['name'] . " </td>
+					<td> " . $value['sekolah'] . " </td>
+					<td> " . $value['kelas'] . " </td>
+					<td> " . $value['tingkat'] . " </td>
+					<td> " . $value['email'] . " </td>
+					<td> " . $value['phone'] . " </td>
+					<td>
+					<form method='get'>
+					  <a href=" . BASEURL . "Profile/toUser/" . $value['id_udata'] . ">Lihat</a>
+					</form>
+					</td>
+				</tr>";
+			}
+		}
+
 
 	public function AutoFill()
 	{
