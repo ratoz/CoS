@@ -112,35 +112,35 @@
 
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" style="object-fit: cover; height: 50%" src="img/akbarps3.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Akbar Hari Mukti</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="url(); public/img/profile/akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="img/ando.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Herlandro Tribiakto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/mut4.png" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Muttafiah</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/raka0.jpg" style="object-fit: cover; height: 60%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Rhaka Novyansyah Dewanto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/anash.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Ahmad Nashrudin</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
