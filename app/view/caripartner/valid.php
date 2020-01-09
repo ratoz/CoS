@@ -1,12 +1,13 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
-      <div class="container row  justify-content-center pb-4">
+      <div class="container row justify-content-center pb-4">
         <h3 class="letter shadow-lg p-2 bg-white rounded">Temukan Sekarang Partner Belajar Kamu !</h3>
       </div>
       <!-- CONTENT -->
     </div>
   </div>
+</div>
   <div class="container-fluid mt--7">
     <div class="row justify-content-center">
       <div class="col-xl-8 order-xl-1">
