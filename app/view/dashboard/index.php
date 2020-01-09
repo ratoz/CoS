@@ -100,21 +100,21 @@
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/mutt.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Muttafiah</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/raka0.jpg" style="object-fit: cover; height: 60%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Rhaka Novyansyah Dewanto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="" alt="Card image cap">
+              <img class="card-img-top" src="img/anash.jpg" style="object-fit: cover; height: 50%" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Ahmad Nashrudin</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>
