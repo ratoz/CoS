@@ -131,7 +131,7 @@
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="../public/img/profile/akb1.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../public/img/profile/ando.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Herlandro Tribiakto</h5>
                 <p class="card-text">Universitas Amikom Yogyakarta</p>

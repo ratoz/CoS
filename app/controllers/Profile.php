@@ -132,15 +132,18 @@ class Profile extends Controller
     public function starRating()
     {
         $data['dataRate'] = $_POST['dataRate'];
-        $data['receive'] = $_POST['receive'];
-        $data['send'] = $_POST['send'];
+        $url = explode('/', $_GET['url']);
+        $data['receive'] = $url[2];
+        $data['send'] = $_SESSION['id'];
         //echo "ok";
         $this->model('DataModel')->Rating($data);
     }
 
     public function showRating()
     {
-        $data['profil']['rating'] = $this->model('DataModel')->ShowRating('UDAA000002');
+        $data['profil']['rating']="";
+        $url = explode('/', $_GET['url']);
+        $data['profil']['rating'] = $this->model('DataModel')->ShowRating($url[2]);
 ?>
         <div class="result-container">
             <div class="rate-bg" style="width:<?php echo $data['profil']['rating']['rate_bg']; ?>"></div>

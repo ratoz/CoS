@@ -392,21 +392,22 @@ class DataModel
 		$this->condb->execute();
 
 		$result['data'] = $this->condb->resultSet();
-		print_r($result);
 		$count = $this->condb->rowCount();
-		$value['rate_value'] = 0;
+		$data['rate_value'] = 0;
 		if ($count == 0) {
 			$data['rate_times'] = 0;
 			$data['rate_bg'] = 0;
 			$data['rate_value'] = 0;
 		} else {
-			foreach ($result['data'] as $data) {
-				$value['rate_value'] += $data['rate_poin'];
+			foreach ($result['data'] as $datad) {
+				$data['rate_value'] += $datad['rate_poin'];
 			}
-			$data['rate_times'] = $this->condb->rowCount();
-			$data['rate_value'] = ($value['rate_value'] / ($data['rate_times'] * 100)) * 5;
+			$data['rate_times'] = $count;
+			$data['rate_value'] = ($data['rate_value'] / ($data['rate_times'] * 100)) * 5;
 			$data['rate_bg'] = ($data['rate_value'] / 5) * 100;
 		}
 		return $data;
 	}
+
+
 }

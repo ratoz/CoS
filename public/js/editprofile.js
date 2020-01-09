@@ -272,8 +272,6 @@ $(document).ready(function () {
   $('.rate-btn').click(function () {
     var therate = $(this).attr('id');
     var dataRate = therate;
-    var id_receive = 'UDAA000002';
-    var id_send = 'UDAA000003' //
     $('.rate-btn').removeClass('rate-btn-active');
     for (var i = therate; i >= 0; i--) {
       $('.btn-' + i).addClass('rate-btn-active');
@@ -281,7 +279,7 @@ $(document).ready(function () {
     $.ajax({
       method: "POST",
       url: "http://localhost/akbarcos2/public/Profile/starRating",
-      data: {dataRate:dataRate,receive:id_receive,send:id_send},
+      data: {dataRate:dataRate},
       success: function (data) {
        }
     });

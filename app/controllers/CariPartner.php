@@ -4,8 +4,11 @@ class CariPartner extends Controller
 {
 	public function index()
 	{
+		$this->view('templates/header');
+		$this->view('caripartner/cari_partner');
+		$this->view('templates/footer');
 		//$model = $this->model('DataModel');
-		$data['mapel'] = $this->model('NilaiModel')->showAllDataMapel();
+		/*$data['mapel'] = $this->model('NilaiModel')->showAllDataMapel();
 
 		$data['foto']= $this->model('DataModel')->selectDatawithID($_SESSION['id']);
 		$data['page']='caripartner';
@@ -17,10 +20,10 @@ class CariPartner extends Controller
 		else
 			$this->view('caripartner/valid',$data);
 		$this->view('templates/footer'); //memanggil file footer pada folder templates
-
+		*/
 	}
 
-	public function searchPartner(){
+	/*public function searchPartner(){
 		$data['id']= $_SESSION['id'];
 		print_r($_POST);
 		$data['mapeldia'] = $_POST['mapel_tinggi'];
@@ -38,7 +41,8 @@ class CariPartner extends Controller
 		else
 			$this->view('caripartner/valid',$data);
 		$this->view('templates/footer');
+	}*/
 
 
-	}
+
 }
