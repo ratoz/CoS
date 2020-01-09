@@ -88,5 +88,12 @@ class Help extends Controller
 				header('Location: ' . BASEURL . 'admin/help');
 			}
 		}
+		if (isset($_POST['acceptvalid'])){
+
+			$data = $this->model('HelpModel')->showTicketById($_POST['id']);
+			$name= explode(",",$data['name']);
+			print_r($name);
+			$data = $this->model('HelpModel')->changeValid($name[0]);
+		}
 	}
 }

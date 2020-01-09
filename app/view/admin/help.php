@@ -149,6 +149,9 @@
 						<div class="row mb-3 float-right">
 							<button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-check"></i> Read</button>
 						</div>
+						<div id="validateacc" class='row mb-3 float-left' style="display: none">
+							<button class='btn btn-primary btn-sm' name='acceptvalid' type='submit'><i class='fa fa-check'></i> Accept</button>
+						</div>
 				</form>
 			</div>
 		</div>

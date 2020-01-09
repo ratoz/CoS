@@ -5,16 +5,17 @@ class CariPartner extends Controller
 	public function index()
 	{
 		$model = $this->model('DataModel');
-		$data['cpartner'] = $model->selectDatawithID($_SESSION['id']); //diganti dengan session
+		$data['mapel'] = $this->model('NilaiModel')->showAllDataMapel();
+		
 		$data['foto']= $this->model('DataModel')->selectDatawithID($_SESSION['id']);
 		$data['page']='caripartner';
-		$this->view('templates/header'); //memanggil file header pada folder templates
+		$this->view('templates/header',$data); //memanggil file header pada folder templates
 		$this->view('templates/navbar', $data);
-		$this->view('caripartner/index'); //memanggil file index pada folder dashboard
-		if ($data['cpartner']['id_prov'] == 'PR000')
-			$this->view('caripartner/notvalid');
+		$this->view('caripartner/index',$data); //memanggil file index pada folder dashboard
+		if ($data['foto']['id_prov'] == 'PR000')
+			$this->view('caripartner/notvalid',$data);
 		else
-			$this->view('caripartner/valid');
+			$this->view('caripartner/valid',$data);
 		$this->view('templates/footer'); //memanggil file footer pada folder templates
 
 	}
