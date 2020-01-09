@@ -10,54 +10,46 @@
         Circle Of Science
       </center>
     </h2>
-    <!-- User -->
-    <ul class="nav align-items-center d-md-none">
-    </ul>
     <!-- Collapse -->
     <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-      <!-- Collapse header -->
-      <div class="navbar-collapse-header d-md-none">
-        <div class="row">
-          <div class="col-6 collapse-brand">
-            <a href="./index.php">
-              <img src="./assets/img/brand/blue.png">
-            </a>
-          </div>
-          <div class="col-6 collapse-close">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
-              <span></span>
-              <span></span>
-            </button>
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="./index.php">
+                <img src="./assets/img/brand/blue.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Navigation -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="<?= BASEURL; ?>admin/home"> <i class="ni ni-tv-2 text-primary"></i> Halaman Admin
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?= BASEURL ?>admin/help">
-            <i class="ni ni-planet text-blue"></i> Help Ticket
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="<?= BASEURL; ?>admin/edit_user">
-            <i class="ni ni-single-02 text-yellow"></i> Edit Pengguna
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./examples/rank.php">
-            <i class="ni ni-bullet-list-67 text-red"></i> Delete
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./examples/login.php">
-            <i class="ni ni-key-25 text-info"></i> Logout
-          </a>
-        </li>
-      </ul>
+        <!-- Navigation -->
+        <ul class="navbar-nav">
+          <li class="nav-item" class="active">
+            <a class="nav-link active" href="./index.php"> <i class="ni ni-tv-2 text-primary"></i> Halaman Admin
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="<?= BASEURL ?>admin/help">
+              <i class="ni ni-planet text-blue"></i> Help Ticket
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= BASEURL ?>admin/edit_user">
+              <i class="ni ni-single-02 text-yellow"></i> Edit Pengguna
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=BASEURL?>admin">
+              <i class="ni ni-key-25 text-info"></i> Logout
+            </a>
+          </li>
+        </ul>
       <!-- Divider -->
       <hr class="my-3">
       <!-- Heading -->
