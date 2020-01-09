@@ -31,7 +31,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item" class="active">
-            <a class="nav-link active" href="./index.php"> <i class="ni ni-tv-2 text-primary"></i> Halaman Admin
+            <a class="nav-link active" href="<?= BASEURL ?>admin/home"> <i class="ni ni-tv-2 text-primary"></i> Halaman Admin
             </a>
           </li>
           <li class="nav-item">
