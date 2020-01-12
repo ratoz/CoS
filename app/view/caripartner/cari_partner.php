@@ -115,15 +115,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=BASEURL?>login">
-              <i class="ni ni-key-25 text-info"></i> Masuk
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?=BASEURL?>registrasi">
-              <i class="ni ni-circle-08 text-pink"></i> Registrasi
-            </a>
-          </li>
+          <a class="nav-link " href="<?= BASEURL; ?>about">
+            <i class="ni ni-app text-default"></i> Tentang Website
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL; ?>Logout">
+            <i class="ni ni-key-25 text-info"></i> Keluar
+          </a>
+        </li>
         </ul>
         <!-- Divider -->
         <hr class="my-3">
